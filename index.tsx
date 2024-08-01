@@ -63,20 +63,15 @@ export default function QrCodeModal({value, isVisible, onClose}:QrCodeProps) {
         visible={isVisible}
       >
         <SafeAreaView style={{flex: 1, alignItems: "center", justifyContent: "space-between"}}>
-          <View style={{flexDirection: "row", marginTop: 80, alignItems: "center", justifyContent: "center"}}>
-            <Text style={{color: "black", fontSize: 24, fontWeight: "bold"}}>Auto servis: </Text>
-            <Text style={{fontSize: 24}}> {garage?.garageName}</Text>
-          </View>
           <QRCode
             value={value}
             size={300}
             color="black"
           />
           <View style={{flexDirection: "row", width: "100%", justifyContent: "center", paddingHorizontal: 20, marginBottom: 80}}>
-            <PrimaryButton handleSubmit={handlePrint} title={"Stampaj"} customStyle={{width: "40%"}}/>
-            {/*{selectedPrinter && <PrimaryButton handleSubmit={handlePrint} title={"Stampaj"} customStyle={{width: "40%"}}/>}*/}
-            <PrimaryButton handleSubmit={onClose} title={"Odustani"} customStyle={{width: "40%", marginLeft: 20}}/>
-            {/*{!selectedPrinter && <PrimaryButton handleSubmit={selectPrinter} title={"Stampac"} customStyle={{width: "40%", marginLeft: 20}}/>}*/}
+            <PrimaryButton handleSubmit={handlePrint} title={"Print"} customStyle={{width: "40%"}}/>
+            <PrimaryButton handleSubmit={onClose} title={"Close"} customStyle={{width: "40%", marginLeft: 20}}/>
+            {!selectedPrinter && <PrimaryButton handleSubmit={selectPrinter} title={"Stampac"} customStyle={{width: "40%", marginLeft: 20}}/>}
           </View>
         </SafeAreaView>
       </Modal>
